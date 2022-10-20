@@ -1,0 +1,18 @@
+#info{
+    margin-left: 25%;
+    width: 50%;
+}
+body{
+    background-color: white;
+}
+
+h5{
+    color:black;
+    margin-left:5%
+}
+
+input{
+    background-color: black;
+    color:white;
+    margin-left: 5%
+}
