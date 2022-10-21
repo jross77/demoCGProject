@@ -1,14 +1,21 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-html = open("index.html").read()
-#<strong>#Set up Flaskstrong>:
+import json
+
+from flask import request
+
+from flask import Flask, render_template
+
 app = Flask(__name__)
-#<strong>#Set up Flask to bypass CORSstrong>:
-cors = CORS(app)
-#Create the receiver API POST endpoint:
-@app.route("/test", methods=["POST"])
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/test', methods=['POST'])
 def test():
-      print(request.get_json())  # parse as JSON
-      return 'Sucesss', 200
-if __name__ == "__main__": 
-   app.run(debug=True)
+    output = request.get_json()
+    print(output) # This is the output that was stored in the JSON within the browser
+    print(type(output))
+    result = json.loads(output) #this converts the json output to a python dictionary
+    print(result) # Printing the new dictionary
+    print(type(result))#this shows the json converted as a python dictionary
+    return result

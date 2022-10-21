@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html>
+
+<html lang="en">
     <head>
         <title>
             Wheeler Graphs
         </title>
-        <link rel="stylesheet" href="bootstrap.min.css">
-        <link rel="stylesheet" href="demo.css">
+        <link rel="stylesheet" href="{{url_for('static', filename='/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='/demo.css')}}">
+        <script src="{{url_for('static', filename='/userInput.js')}}"></script>
+         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
        </head>
     <body>
         <h5>Please enter your DNA Sequence Below:</h5>
@@ -15,7 +17,5 @@
         <br>
         <img id = "info"></img>
         <!-- Link to the JavaScript file here: -->
-         <script src="userInput.js"></script>
-         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-    </body>
+          </body>
 </html>
