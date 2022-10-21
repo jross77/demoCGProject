@@ -9,10 +9,14 @@
         // Print entered dna string for testing purposes
         console.log(data_s.value);
         const s = JSON.stringify(data_s.value);
-     $.ajax({
+     output = $.ajax({
         url:"/test",
         type:"POST",
         contentType: "application/json",
         data: JSON.stringify(s)});
+    console.log(output);
+    if(output.success){
+        show_img.src = "{{url_for('static', filename='./temp.gif')}}"
+    }
     } 
    
